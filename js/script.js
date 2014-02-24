@@ -40,7 +40,6 @@ Funny stuff
 /*camera*/
 function getColorFromCam(){
 	$.scriptcam.getMotionParameters();
-	console.log($("#color").text().substring(21)+"]");
 	changeAllXY("["+colors.hexToCIE1931($("#color").text().substring(21))+"]")
 	changeAllBri("[" + $("#brightness").text().substring(26) + "]");
 }
@@ -129,6 +128,9 @@ Bulb control
 ***********/
 
 function toggleAll(value){
+	if(typeof value === "undefined"){
+		value = bulbsOn;
+	}
 	var url = groupRequestURL + '/action';
 	var request = '{"on": ' + value + '}';
 	bulbsOn = !bulbsOn;

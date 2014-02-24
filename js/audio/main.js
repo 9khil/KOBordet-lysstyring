@@ -32,7 +32,6 @@ var UberVizMain = function() {
     }
 
     events.on('onBeat', function(){
-        console.log('klapp');
         toggleAll();
     });
 
