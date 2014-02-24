@@ -53,6 +53,8 @@ Funny stuff
 
 /*camera*/
 function getColorFromCam(){
+	$.scriptcam.getMotionParameters();
+	
 	changeAllXY("["+colors.hexToCIE1931($("#color").text().substring(21))+"]")
 	changeAllBri("[" + $("#brightness").text().substring(26) + "]");
 }

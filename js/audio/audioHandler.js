@@ -81,7 +81,7 @@ var AudioHandler = function() {
 		debugCtx.fillStyle = "rgb(40, 40, 40)";
 		debugCtx.lineWidth=2;
 		debugCtx.strokeStyle = "rgb(255, 255, 255)";
-		$('#audioDebugCtx').hide();
+		//$('#audioDebugCtx').hide();
 
 		gradient = debugCtx.createLinearGradient(0,0,0,256);
 		gradient.addColorStop(1,'#330000');

@@ -94,7 +94,7 @@
 			for (var key in opts) {
 				opts[key] = encodeURIComponent(opts[key]);
 			};
-			swfobject.embedSWF(decodeURIComponent(data.path)+'scriptcam.swf', opts.id, newWidth, newHeight, '11.6', false, opts, params);
+			swfobject.embedSWF(decodeURIComponent(data.path)+'/js/cam/scriptcam.swf', opts.id, newWidth, newHeight, '11.6', false, opts, params);
 		});
 	};
 	
