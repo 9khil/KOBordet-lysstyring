@@ -1,8 +1,6 @@
-#loader.active{
-	text-align: center;
-	display: block;
-}
-
+/**********
+ main page 
+**********/
 #loader,
 #onOffToggles,
 #modeSelectors,
@@ -14,9 +12,17 @@ audio
 
 #onOffToggles button.active,
 #modeSelectors.active,
-#onOffToggles.active{
+#onOffToggles.active,
+#loader.active{
 	display: block;
 }
+
+
+#loader.active
+{
+	text-align: center;
+}
+
 
 #turnLampsOff{
 	background: green;
@@ -25,9 +31,6 @@ audio
 #turnLampsOn{
 	background: red;
 }
-
-
-
 
 button,
 input{
