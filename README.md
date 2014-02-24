@@ -20,5 +20,7 @@ Pass på at URL i js/script.js er satt til Philips HUE bridgen, som har satt opp
 
 Men hvordan? Det funker ikke? Jeg vil ha sånn og sånn!
 --------------
-Snakk med Nikhil 
+Snakk med Nikhil.
+
+Kode av Jonas, Henrik og Nikhil. 
 
