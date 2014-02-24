@@ -1,0 +1,39 @@
+#loader.active{
+	text-align: center;
+	display: block;
+}
+
+#loader,
+#onOffToggles,
+#modeSelectors,
+#onOffToggles button,
+audio
+{
+	display: none;
+}
+
+#onOffToggles button.active,
+#modeSelectors.active,
+#onOffToggles.active{
+	display: block;
+}
+
+#turnLampsOff{
+	background: green;
+}
+
+#turnLampsOn{
+	background: red;
+}
+
+
+
+
+button,
+input{
+	width: 100%;
+}
+
+#brightness{
+	margin-bottom: 20px;
+}
