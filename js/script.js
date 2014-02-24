@@ -33,20 +33,6 @@ function initialize() {
  }  
 
 
-
-
-	if(document.getElementById('colorPickerAll')){
-		document.getElementById('colorPickerAll').addEventListener('change', function(){
-				var hex = this.value.substr(1);
-				changeAllXY("["+colors.hexToCIE1931(hex)+"]");
-		});
-	}
-
-	
-	
-
-
-
 /*********
 Funny stuff 
 **********/
@@ -54,7 +40,7 @@ Funny stuff
 /*camera*/
 function getColorFromCam(){
 	$.scriptcam.getMotionParameters();
-	
+	console.log($("#color").text().substring(21)+"]");
 	changeAllXY("["+colors.hexToCIE1931($("#color").text().substring(21))+"]")
 	changeAllBri("[" + $("#brightness").text().substring(26) + "]");
 }
