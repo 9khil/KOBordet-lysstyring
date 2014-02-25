@@ -33,20 +33,6 @@ function initialize() {
  }  
 
 
-
-
-	if(document.getElementById('colorPickerAll')){
-		document.getElementById('colorPickerAll').addEventListener('change', function(){
-				var hex = this.value.substr(1);
-				changeAllXY("["+colors.hexToCIE1931(hex)+"]");
-		});
-	}
-
-	
-	
-
-
-
 /*********
 Funny stuff 
 **********/
@@ -54,7 +40,6 @@ Funny stuff
 /*camera*/
 function getColorFromCam(){
 	$.scriptcam.getMotionParameters();
-	
 	changeAllXY("["+colors.hexToCIE1931($("#color").text().substring(21))+"]")
 	changeAllBri("[" + $("#brightness").text().substring(26) + "]");
 }
@@ -143,6 +128,9 @@ Bulb control
 ***********/
 
 function toggleAll(value){
+	if(typeof value === "undefined"){
+		value = bulbsOn;
+	}
 	var url = groupRequestURL + '/action';
 	var request = '{"on": ' + value + '}';
 	bulbsOn = !bulbsOn;

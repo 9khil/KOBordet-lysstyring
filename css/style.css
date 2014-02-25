@@ -5,7 +5,9 @@
 #onOffToggles,
 #modeSelectors,
 #onOffToggles button,
-audio
+audio,
+#color,
+#brightness
 {
 	display: none;
 }
