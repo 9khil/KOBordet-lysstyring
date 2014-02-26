@@ -12,15 +12,16 @@ audio,
 	display: none;
 }
 
-#onOffToggles button.active,
-#modeSelectors.active,
-#onOffToggles.active,
-#loader.active{
+#onOffToggles button.active ,
+.active #modeSelectors,
+.active #onOffToggles,
+#loader.active,
+.active #brightness{
 	display: block;
 }
 
 
-#loader.active
+#loader.active 
 {
 	text-align: center;
 }

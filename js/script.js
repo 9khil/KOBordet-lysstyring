@@ -1,14 +1,15 @@
 //  00:17:88:14:E3:9A
-var requestURL = "http://10.1.101.147/api/newdeveloper/lights";
-var groupRequestURL = "http://10.1.101.147/api/newdeveloper/groups/0"; 
+var requestURL = "http://10.1.100.185/api/newdeveloper/lights";
+var groupRequestURL = "http://10.1.100.185/api/newdeveloper/groups/0"; 
 
 //testUrls
-var requestURL =  "http://192.168.1.120/api/newdeveloper/lights";
-var groupRequestURL =  "http://192.168.1.120/api/newdeveloper/groups/0";
+//var requestURL =  "http://192.168.1.120/api/newdeveloper/lights";
+//var groupRequestURL =  "http://192.168.1.120/api/newdeveloper/groups/0";
 
 var bulbs;
 var bulbsOn = false;
 var discoMode = false;
+var loaded = false;
 
 var workHex = "FFFFCC";
 
@@ -72,7 +73,7 @@ Bulb presets
 
 function workMode(){
 	changeAllXY("["+colors.hexToCIE1931(workHex)+"]");
-	changeAllBri(180);
+	changeAllBri(150);
 	changeAllSat(180);
 }
 
@@ -170,9 +171,10 @@ function getBulbState(){
 	    	var response = JSON.parse(xmlHttp.response);
 	    	for(var i = 1; i <= Object.size(bulbs); i++){
 	    		bulbs[i].on = response.action.on;
+	    		if(bulbs[i].on)
+	    			toggleBulbButtons();
 	    	}
-	    	if(bulbs[1].on)
-	    		toggleBulbButtons();
+	    	
 
 	    	toggleLoader();
     	}
@@ -244,11 +246,14 @@ function changeAllSat(value){
 };
 
 function toggleBulbButtons(){
-	$("#turnLampsOff, #turnLampsOn, #modeSelectors").toggleClass('active');	
+	if(!loaded){
+		$("#onOffToggles button").toggleClass("active");
+		loaded = true;
+	}
 }
 
 function toggleLoader(){
-	$("#loader, #onOffToggles").toggleClass('active');
+	$("#loader, body").toggleClass('active');
 }
 
 /***********
